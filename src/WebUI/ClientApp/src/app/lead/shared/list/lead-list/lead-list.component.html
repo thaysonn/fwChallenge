@@ -1,0 +1,8 @@
+ <div [ngSwitch]="leadStatus">
+  <div *ngSwitchCase="optionsLeadStatus.Invited">
+    <app-lead-invited-list></app-lead-invited-list>
+  </div>
+  <div *ngSwitchCase="optionsLeadStatus.Accepted">
+    <app-lead-accepted-list></app-lead-accepted-list>
+  </div> 
+</div>

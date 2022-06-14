@@ -1,0 +1,42 @@
+<div class="lead-details container-sm mt-3">
+  <div class="card shadow-sm">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <app-contact-avatar [name]="lead.contact.fullName"></app-contact-avatar>
+        <div>
+          <span class="fw-bold">{{ lead.contact.fullName }}</span>
+        </div>
+        <div>
+          <span class="text-secondary">{{ lead.created | date: 'longDate' }} @ {{ lead.created | date: 'shortTime' }}</span>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-3">
+            <span><i class="bi bi-geo-alt"></i> {{ lead.suburb }}</span>
+          </div>
+          <div class="col-3">
+            <span><i class="bi bi-briefcase"></i> {{ lead.category }}</span>
+          </div>
+          <div class="col-3">
+            <span>Job ID: {{ lead.id }}</span>
+          </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <span class="fw-light">{{ lead.description }}</span>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-xxl-2 col-lg-3 col-sm-5">
+            <button class="btn btn-warning text-white" type="button" (click)="accept()">Accept</button>
+            <button class="btn btn-light" type="button" (click)="decline()">Decline</button>
+          </div>
+          <div class="col"> <span class="fw-bold">{{ lead.price | currency: 'USD' }}</span> Lead Inviation</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
